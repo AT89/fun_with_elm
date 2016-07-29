@@ -13,7 +13,12 @@
 
 -interpolates HTML, CSS, Javascript
 
--no variables, no assignment since you cannot mutate
+-Everything on 1 page (in development)
+
+-Said to be faster than react.js at rendering
+
+-smooth JS interop
+
 
 ##ELM PROS:
 -will compile HTML, CSS, JS all in one file
@@ -138,15 +143,64 @@ view model =
     ]
 
 ```
-- Look at how the program will import (by exposing Html, button, div, text). You will need to take
 
--Looking more into the app, you will see:
 
---Main is what displays on the HTML
+Looking more into the app, you will see:
 
---Update is similar to the JS (behavior)
+- Look at how the program will import (by exposing Html, button, div, text)
 
---exporting Html.app lets us use these above.
+- Main is what displays on the HTML
+
+- Update is similar to the JS (behavior)
+
+- exporting Html.app lets us use these above.
+
+
+Try to make expontentiate button!
+
+##Another example of adding (with documentation)
+```
+import Html exposing (Html, button, div, text, h1)
+import Html.App as App
+import Html.Events exposing (onClick)
+-- Html is an Elm library, exposing(this is what we want from the library)
+-- If we do exposing(..) then we want all methods from library
+
+-- Front end applications in Elm start on a function called "main", kinda like ruby yield
+
+main =
+  -- main is what displays on our html page
+  App.beginnerProgram { model = 0, view = view, update = update }
+  -- beginnerProgram takes a Record which in JS is an object, it takes 3 keys, which are our model and functions
+
+type Msg = Increment | Decrement
+type alias Model = Int
+
+-- Messages are the actions that can be taken in our app
+-- or things that can be done to change the state of our app
+
+update : Msg -> Model -> Model
+update message model =
+  case message of
+    -- if Increment, create new instance of model
+    Increment ->
+      model + 1
+    -- else if Decrement, create new instance of model
+    Decrement ->
+      model - 1
+
+view model =
+  -- element takes two args, attributes and child elements
+  -- div comes from exposing it from the Html library
+  div []
+    [ h1 [] [ text "Elm Counter" ]
+    , button [ onClick Increment ] [ text "-" ]
+    , div [] [ text (toString model) ]
+    , button [ onClick Decrement ] [ text "+" ]
+    ]
+
+```
+
 
 #More
 -HTML modules, ranked by popularity and their commands:
