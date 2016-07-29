@@ -29,6 +29,9 @@
 
 -limitations, no .map, .apply, .fold, .filter
 
+-whitespaces error, spacing matters alot
+
+
 #Lets get started
 -install the elm package via website http://elm-lang.org/get-started
   get the colors if you want at Atom Preferences/Install/search elm-language (get the 2nd one)
@@ -62,7 +65,7 @@ elm-reactor
 ```
 Which is a built in hub page for all your elm's on localhost:8000
 
-#elm repl
+#ELM has a repl!
 -there is an also elm repl
 -Play with the elm commands
 http://www.elm-tutorial.org/en/03-subs-cmds/02-commands.html
@@ -95,6 +98,52 @@ main =
   |> Html.text
 ```
 -the string is being manipulated and then formatted to HTML at the end
+
+##Another example, adding.elm
+```
+import Html exposing (Html, button, div, text)
+import Html.App as App
+import Html.Events exposing (onClick)
+
+-- Front end applications in Elm start on a function called "main", kinda like ruby yield
+
+main =
+  App.beginnerProgram { model = 0, view = view, update = update }
+
+type Msg = Increment | Decrement | Addfive | Addten
+
+update msg model =
+  case msg of
+    Increment ->
+      model + 1
+
+    Decrement ->
+      model - 1
+
+    Addfive ->
+      model + 5
+
+    Addten ->
+      model + 10
+
+view model =
+  div []
+    [ button [ onClick Decrement ] [ text "-" ]
+    , div [] [ text (toString model) ]
+    , button [ onClick Increment ] [ text "+" ]
+    , button [ onClick Addfive ] [ text "Add five" ]
+    , button [ onClick Addten ] [ text "Add ten" ]
+    ]
+    ```
+- Look at how the program will import (by exposing Html, button, div, text). You will need to take
+
+-Looking more into the app, you will see:
+
+-- Main is what displays on the HTML
+
+-- Update is similar to the JS (behavior)
+
+--exporting Html.app lets us use these above.
 
 #More
 -HTML modules, ranked by popularity and their commands:
