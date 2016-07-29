@@ -1,30 +1,41 @@
-#ElM
+#ELM
 -a tall deciduous tree that typically has rough serrated leaves and propagates from root suckers.
+
 -the wood of the elm tree.
+
 --noun: elmwood
 
 -But really, Elm was designed by Evan Czaplicki as his thesis in 2012.
+
 -Elm has a small but expressive set of language constructs, including if-expressions, let-expressions, case-expressions, anonymous functions, and list interpolation.From there the key features include signals, immutability, static types, and interoperability with HTML, CSS, and JavaScript.
+
 -Immutability - all values in ELM cannot be changed once its created. ELM uses persistent data structures
+
 -interpolates HTML, CSS, Javascript
 
 ##ELM PROS:
 -will compile HTML, CSS, JS all in one file
+
 -Very nice error messages/Excellent documentation that will even recommend changes
+
 -Very Modular (ie you want to add in strings, you need import String)
+
 -Single page apps with ELM
 
 ##ELM CONS:
--a lot of dependencies
+-need to load dependencies
+
 -very explicit
+
 -limitations, no .map, .apply, .fold, .filter
 
-#Lets get down to business
+#Lets get started
 -install the elm package via website http://elm-lang.org/get-started
   get the colors if you want at Atom Preferences/Install/search elm-language (get the 2nd one)
 
 
 -make a directory
+
 elm package install - for all the dependencies you need (similar to gems)
 make the elm file, so for this
 
@@ -88,6 +99,9 @@ main =
 #More
 -HTML modules, ranked by popularity and their commands:
 http://package.elm-lang.org/packages/elm-lang/html/1.1.0/Html
+
 -Make a todo: https://justinsilvestre.gitbooks.io/hit-the-ground-running-with-elm/content/generating_html.html
+
 -Evan's to do finished: http://evancz.github.io/elm-todomvc/#/
+
 -Evan's todo repo https://github.com/evancz/elm-todomvc
