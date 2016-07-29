@@ -13,6 +13,8 @@
 
 -interpolates HTML, CSS, Javascript
 
+-no variables, no assignment since you cannot mutate
+
 ##ELM PROS:
 -will compile HTML, CSS, JS all in one file
 
@@ -134,14 +136,15 @@ view model =
     , button [ onClick Addfive ] [ text "Add five" ]
     , button [ onClick Addten ] [ text "Add ten" ]
     ]
-    ```
+
+```
 - Look at how the program will import (by exposing Html, button, div, text). You will need to take
 
 -Looking more into the app, you will see:
 
--- Main is what displays on the HTML
+--Main is what displays on the HTML
 
--- Update is similar to the JS (behavior)
+--Update is similar to the JS (behavior)
 
 --exporting Html.app lets us use these above.
 
